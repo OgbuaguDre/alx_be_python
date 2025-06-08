@@ -8,6 +8,7 @@ def display_menu():
     print("4. Exit")
 
 def main():
+    print(f"Shopping List Manager")  # Added as requested
     shopping_list = []
     
     while True:
