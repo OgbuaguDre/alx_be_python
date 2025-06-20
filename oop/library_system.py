@@ -12,7 +12,7 @@ class Book:
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
-        self.file_size = file_size  # in KB
+        self.file_size = file_size
 
     def __str__(self):
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
@@ -35,3 +35,8 @@ class Library:
         if isinstance(book, Book):
             self.books.append(book)
         else:
+            raise TypeError("Only Book or its subclasses can be added to the library.")
+
+    def list_books(self):  # <-- Make sure this line is present and exactly named!
+        for book in self.books:
+            print(book)
